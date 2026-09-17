@@ -15,7 +15,19 @@ export default function Gallery() {
       <section className="wrap">
         <div className="gallery-videos">
           {galleryVideos.map((src) => (
-            <video key={src} src={src} muted playsInline controls preload="metadata" />
+            <video
+              key={src}
+              src={src}
+              muted
+              defaultMuted
+              playsInline
+              controls
+              preload="metadata"
+              onLoadedMetadata={(event) => {
+                event.currentTarget.muted = true;
+                event.currentTarget.defaultMuted = true;
+              }}
+            />
           ))}
         </div>
         <div className="gallery-page">
