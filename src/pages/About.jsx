@@ -23,9 +23,9 @@ export default function About() {
             Serving events across Gauteng.
           </h2>
           <p style={{ marginBottom: "1rem", color: "#4b4b4b" }}>
-            We deliver furniture and décor to homes, gardens, halls, marquees
-            and venues. The photos on this website are from real PurpleRain
-            events.
+            We are based at {site.address}, {site.suburb}, {site.city}. We
+            deliver furniture and décor to homes, gardens, halls, marquees and
+            venues. The photos on this website are from real PurpleRain events.
           </p>
           <p style={{ marginBottom: "1.4rem", color: "#4b4b4b" }}>
             There is no online shop. Browse the items, then send an enquiry.

@@ -45,6 +45,10 @@ export default function Contact() {
             PurpleRain
           </h2>
           <p>
+            {site.address}
+            <br />
+            {site.suburb}
+            <br />
             {site.city}
             <br />
             {site.region}
@@ -55,7 +59,6 @@ export default function Contact() {
             {site.phoneAlt}
           </p>
           <p style={{ marginTop: "1rem" }}>{site.hours}</p>
-          <a href={`mailto:${site.email}`}>{site.email}</a>
         </aside>
         <form className="form" onSubmit={onSubmit}>
           <label htmlFor="name">Name</label>

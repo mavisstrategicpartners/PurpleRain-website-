@@ -34,7 +34,7 @@ export default function Home() {
           <p>
             PurpleRain Events & Hire provides furniture rentals, exclusive décor
             and event items for weddings, birthdays, corporate events and
-            private functions in Johannesburg and across Gauteng.
+            private functions in Pretoria and across Gauteng.
           </p>
           <p>
             Look through the photos, choose what you need, then send an enquiry.

@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navLinks, site, whatsappHref } from "../data/site";
 
 export default function Layout() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("nav-open", open);
+    return () => document.body.classList.remove("nav-open");
+  }, [open]);
 
   return (
     <>
@@ -34,13 +39,15 @@ export default function Layout() {
           </nav>
 
           <div className="header-cta">
-            <a className="btn btn-gold" href={whatsappHref()}>
-              Enquire on WhatsApp
+            <a className="btn btn-gold header-whatsapp" href={whatsappHref()}>
+              <span className="cta-full">Enquire on WhatsApp</span>
+              <span className="cta-short">WhatsApp</span>
             </a>
             <button
               className="menu-btn"
               type="button"
-              aria-label="Open menu"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
               onClick={() => setOpen((value) => !value)}
             >
               {open ? "Close" : "Menu"}
@@ -83,14 +90,19 @@ export default function Layout() {
           </div>
           <div>
             <h3>Enquire</h3>
-            <p>{site.city}, {site.region}</p>
+            <p>
+              {site.address}
+              <br />
+              {site.suburb}, {site.city}
+            </p>
+            <p>{site.region}</p>
             <p>{site.phoneDisplay} · {site.phoneAlt}</p>
             <p>{site.hours}</p>
             <NavLink to="/contact">Contact</NavLink>
           </div>
         </div>
         <div className="wrap copyright">
-          © {new Date().getFullYear()} PurpleRain Events & Hire. Johannesburg.
+          © {new Date().getFullYear()} PurpleRain Events & Hire. Pretoria.
         </div>
       </footer>
     </>
