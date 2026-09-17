@@ -708,6 +708,49 @@ p {
   background: #000;
 }
 
+.silent-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #000;
+}
+
+.silent-video video {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #000;
+}
+
+.silent-video-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.65rem;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+}
+
+.silent-video-bar button {
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 36px;
+  padding: 0 0.2rem;
+}
+
 .form {
   display: grid;
   gap: 0.85rem;

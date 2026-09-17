@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SilentVideo from "../components/SilentVideo.jsx";
 import { galleryImages, galleryVideos } from "../data/catalogue";
 
 export default function Gallery() {
@@ -15,19 +16,7 @@ export default function Gallery() {
       <section className="wrap">
         <div className="gallery-videos">
           {galleryVideos.map((src) => (
-            <video
-              key={src}
-              src={src}
-              muted
-              defaultMuted
-              playsInline
-              controls
-              preload="metadata"
-              onLoadedMetadata={(event) => {
-                event.currentTarget.muted = true;
-                event.currentTarget.defaultMuted = true;
-              }}
-            />
+            <SilentVideo key={src} src={src} />
           ))}
         </div>
         <div className="gallery-page">
